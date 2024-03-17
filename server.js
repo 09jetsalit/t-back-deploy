@@ -2,10 +2,10 @@ import dotenv from "dotenv";
 import cors from "cors";
 import express, { response } from "express";
 import multer from "multer";
-import { ObjectId } from "mongodb";
 import databaseClient from "./services/database.mjs";
-
-
+import addmember from "./module/addmember.js";
+import getdata from "./module/getdata.js";
+import deletemember from "./module/deletemember.js";
 
 
 const HOSTNAME = process.env.SERVER_IP || "127.0.0.1";
@@ -19,9 +19,11 @@ webServer.use(cors());
 webServer.use(express.json());
 
 // code here
-webServer.post("/signup", signupRoute);
+webServer.get("/member", getdata);
 
-webServer.post("/login", loginRoute);
+webServer.post("/member", addmember);
+
+webServer.delete("/member/:id", deletemember);
 
 
 
