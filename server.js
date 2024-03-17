@@ -5,6 +5,7 @@ import multer from "multer";
 import databaseClient from "./services/database.mjs";
 import addmember from "./module/addmember.js";
 import getdata from "./module/getdata.js";
+import editmember from "./module/editmember.js";
 import deletemember from "./module/deletemember.js";
 
 
@@ -22,6 +23,8 @@ webServer.use(express.json());
 webServer.get("/member", getdata);
 
 webServer.post("/member", addmember);
+
+webServer.put("/member/:id", editmember)
 
 webServer.delete("/member/:id", deletemember);
 
