@@ -4,11 +4,6 @@ import express, { response } from "express";
 import multer from "multer";
 import { ObjectId } from "mongodb";
 import databaseClient from "./services/database.mjs";
-import { checkMissingField } from "./utils/requestUtils.js";
-import bcrypt from "bcrypt";
-import signupRoute from "./module/signup.js"
-import jwt from "jsonwebtoken";
-import loginRoute from "./module/login.js";
 
 
 
