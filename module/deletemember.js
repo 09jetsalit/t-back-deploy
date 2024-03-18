@@ -3,7 +3,6 @@ import databaseClient from "../services/database.mjs";
 
 const deletemember = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   try {
     await databaseClient
       .db()
