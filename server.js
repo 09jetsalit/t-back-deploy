@@ -9,7 +9,7 @@ import editmember from "./module/editmember.js";
 import deletemember from "./module/deletemember.js";
 
 
-const HOSTNAME = process.env.SERVER_IP || "127.0.0.1";
+// const HOSTNAME = process.env.SERVER_IP || "127.0.0.1";
 const PORT = process.env.SERVER_PORT || 3000;
 
 // setting initial configuration for upload file, web server (express), and cors
@@ -33,11 +33,12 @@ webServer.delete("/member/:id", deletemember);
 
 
 // initilize web server
-const currentServer = webServer.listen(PORT, HOSTNAME, () => {
+const currentServer = webServer.listen(PORT,  () => {
   console.log(
     `DATABASE IS CONNECTED: NAME => ${databaseClient.db().databaseName}`
   );
-  console.log(`SERVER IS ONLINE => http://${HOSTNAME}:${PORT}`);
+  // console.log(`SERVER IS ONLINE => http://${HOSTNAME}:${PORT}`);
+  console.log(`SERVER IS ONLINE => WITH PORT: ${PORT}`);
 });
 
 const cleanup = () => {
